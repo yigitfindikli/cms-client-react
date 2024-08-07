@@ -6,7 +6,7 @@ export const fetchWrapper = async (
 ): Promise<any> => {
 	const response = await fetch(`${baseUrl}${url}`, {
 		...options,
-		cache: options.cache || "no-store",
+		cache: options.cache || "default",
 		headers: {
 			"Content-Type": "application/json",
 			...options.headers

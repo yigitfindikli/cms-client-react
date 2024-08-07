@@ -1,3 +1,5 @@
+"use server";
+
 import { fetchWrapper } from "@/utils/fetch";
 import type {
 	CreatePostData,
@@ -6,6 +8,8 @@ import type {
 	UpdatePostResponse,
 	Post
 } from "../types/post";
+import { revalidatePath } from "next/cache";
+import { headers } from "next/headers";
 
 export const createPost = async (
 	data: CreatePostData
@@ -19,10 +23,20 @@ export const createPost = async (
 export const updatePost = async (
 	data: UpdatePostData
 ): Promise<UpdatePostResponse> => {
-	return await fetchWrapper(`/post/${data.id}`, {
+	const headerList = headers();
+	const cookies = headerList.get("cookie") || "";
+	const res = await fetchWrapper(`/post/${data.id}`, {
+		headers: {
+			cookie: cookies,
+			"Content-Type": "application/json"
+		},
 		method: "PUT",
 		body: JSON.stringify(data)
 	});
+
+	await revalidatePath(`/posts`);
+	await revalidatePath(`/posts/${data.id}`);
+	return res;
 };
 
 export const deletePost = async (id: string): Promise<void> => {
