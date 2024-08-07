@@ -1,5 +1,5 @@
 import RegisterForm from "@/components/RegisterForm";
-import { getCurrentUser } from "@/services/AuthService";
+import { getCurrentUser } from "@/services/authService";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 

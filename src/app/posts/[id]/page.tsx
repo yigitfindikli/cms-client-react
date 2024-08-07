@@ -1,4 +1,4 @@
-import { getPostById } from "@/services/PostService";
+import { getPostById } from "@/services/postService";
 import { Post } from "@/types/post";
 
 const PostDetailPage = async ({ params }: { params: { id: string } }) => {

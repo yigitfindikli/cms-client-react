@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import LoginForm from "@/components/LoginForm";
-import { getCurrentUser } from "@/services/AuthService";
+import { getCurrentUser } from "@/services/authService";
 import { headers } from "next/headers";
 
 const LoginPage = async () => {

@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { Post } from "../types/post";
 import { useAuth } from "@/providers/AuthProvider";
-import { isUserAdmin } from "@/utils/userValidations";
 
 interface BlogListProps {
-	posts: Post[] | [];
+	posts?: Post[] | [];
 	onDelete?: (id: string) => void;
 	showActionButtons?: boolean;
 }
@@ -25,7 +24,7 @@ const BlogList = ({ posts, onDelete, showActionButtons }: BlogListProps) => {
 					Create New Post
 				</Link>
 			)}
-			{posts.length ? (
+			{posts && posts.length ? (
 				<ul className="grid grid-cols-1 gap-4">
 					{posts.map((post: Post) => (
 						<li

@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { CreatePostData, UpdatePostData } from "../types/post";
 import { useRouter } from "next/navigation";
-import { createPost, updatePost } from "@/services/PostService";
+import { createPost, updatePost } from "@/services/postService";
 
 interface PostFormProps {
 	initialValues?: CreatePostData | UpdatePostData;

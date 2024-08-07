@@ -14,7 +14,7 @@ import {
 	logout as _logout,
 	login as _login,
 	register as _register
-} from "@/services/AuthService";
+} from "@/services/authService";
 import { LoginData, RegisterData } from "@/types/auth";
 
 interface AuthContextProps {

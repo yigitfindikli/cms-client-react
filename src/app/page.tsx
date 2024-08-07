@@ -1,6 +1,6 @@
 import BlogList from "@/components/BlogList";
-import { getCurrentUser } from "@/services/AuthService";
-import { getAllPosts } from "@/services/PostService";
+import { getCurrentUser } from "@/services/authService";
+import { getAllPosts } from "@/services/postService";
 import { Post } from "@/types/post";
 import { isUserAdmin } from "@/utils/userValidations";
 import { AppProps } from "next/app";

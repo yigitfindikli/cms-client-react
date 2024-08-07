@@ -8,7 +8,7 @@ import {
 	updateUserEmail,
 	updateUserPassword,
 	deleteUser
-} from "@/services/UserService";
+} from "@/services/userService";
 import { User } from "@/types/user";
 import { useRouter } from "next/navigation";
 

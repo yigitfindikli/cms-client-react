@@ -1,4 +1,4 @@
-import { getPostById } from "@/services/PostService";
+import { getPostById } from "@/services/postService";
 import PostForm from "@/components/PostForm";
 
 const EditPostPage = async ({ params }: { params: { id: string } }) => {

@@ -1,5 +1,4 @@
 import { fetchWrapper } from "../utils/fetch";
-import { GetServerSidePropsContext } from "next";
 import type {
 	LoginData,
 	RegisterData,

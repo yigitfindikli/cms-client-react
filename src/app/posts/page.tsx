@@ -1,7 +1,7 @@
-import { getPostsByAuthor } from "@/services/PostService";
+import { getPostsByAuthor } from "@/services/postService";
 import BlogList from "@/components/BlogList";
 import { Post } from "@/types/post";
-import { getCurrentUser } from "@/services/AuthService";
+import { getCurrentUser } from "@/services/authService";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
