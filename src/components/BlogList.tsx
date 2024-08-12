@@ -1,8 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { Post } from "../types/post";
 import { useAuth } from "@/providers/AuthProvider";
+import Button from "./Button";
+import Link from "./Link";
+import { useState } from "react";
 
 interface BlogListProps {
 	posts?: Post[] | [];
@@ -12,6 +14,8 @@ interface BlogListProps {
 
 const BlogList = ({ posts, onDelete, showActionButtons }: BlogListProps) => {
 	const { user } = useAuth();
+
+	const [severity, setSeverity] = useState("primary");
 
 	return (
 		<div className="p-6 bg-gray-100 h-full">
@@ -50,18 +54,23 @@ const BlogList = ({ posts, onDelete, showActionButtons }: BlogListProps) => {
 								<div className="mt-2 space-x-2">
 									<Link
 										href={`/posts/${post.id}/edit`}
-										className="text-yellow-500 hover:underline"
+										text={false}
 									>
 										Edit
 									</Link>
-									<button
-										onClick={() =>
-											onDelete && onDelete(post.id)
-										}
-										className="text-red-500 hover:underline"
-									>
-										Delete
-									</button>
+
+									<Button
+										onClick={() => {
+											onDelete && onDelete(post.id);
+											setSeverity(
+												severity === "primary"
+													? "danger"
+													: "primary"
+											);
+										}}
+										label="Delete"
+										severity="danger"
+									/>
 								</div>
 							)}
 						</li>

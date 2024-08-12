@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/providers/AuthProvider";
 import { useForm } from "react-hook-form";
+import Button from "./Button";
 
 interface RegisterFormValues {
 	firstName: string;
@@ -84,12 +85,7 @@ const RegisterForm = () => {
 							className="w-full px-3 py-2 mt-1 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-200"
 						/>
 					</div>
-					<button
-						type="submit"
-						className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
-					>
-						Register
-					</button>
+					<Button type="submit">Register</Button>
 				</form>
 			</div>
 		</div>

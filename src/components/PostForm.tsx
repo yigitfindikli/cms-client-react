@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { CreatePostData, UpdatePostData } from "../types/post";
 import { useRouter } from "next/navigation";
 import { createPost, updatePost } from "@/services/postService";
+import Button from "./Button";
 
 interface PostFormProps {
 	initialValues?: CreatePostData | UpdatePostData;
@@ -68,12 +69,9 @@ const PostForm = ({ initialValues }: PostFormProps) => {
 					className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
 				/>
 			</div>
-			<button
-				type="submit"
-				className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
-			>
+			<Button type="submit" className="w-full">
 				Submit
-			</button>
+			</Button>
 		</form>
 	);
 };

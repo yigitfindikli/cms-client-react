@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { LoginData } from "@/types/auth";
 import { useAuth } from "@/providers/AuthProvider";
+import Button from "./Button";
 
 interface LoginFormValues {
 	email: string;
@@ -63,12 +64,9 @@ const LoginForm = () => {
 							className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200"
 						/>
 					</div>
-					<button
-						type="submit"
-						className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200"
-					>
+					<Button type="submit" className="w-full">
 						Login
-					</button>
+					</Button>
 				</form>
 			</div>
 		</div>

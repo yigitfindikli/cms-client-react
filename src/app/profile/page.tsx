@@ -11,6 +11,7 @@ import {
 } from "@/services/userService";
 import { User } from "@/types/user";
 import { useRouter } from "next/navigation";
+import Button from "@/components/Button";
 
 const ProfilePage = () => {
 	const { user, logout } = useAuth();
@@ -73,12 +74,10 @@ const ProfilePage = () => {
 					<div className="flex flex-wrap justify-between items-center">
 						<h2 className="text-2xl font-semibold">Name</h2>
 						{!isEditingName && (
-							<button
+							<Button
 								onClick={() => setIsEditingName(true)}
-								className="bg-blue-500 text-white px-4 py-2 rounded"
-							>
-								Edit
-							</button>
+								label="Edit"
+							/>
 						)}
 					</div>
 					{isEditingName ? (
@@ -117,19 +116,13 @@ const ProfilePage = () => {
 								/>
 							</div>
 							<div className="flex gap-4">
-								<button
-									type="submit"
-									className="bg-blue-500 text-white px-4 py-2 rounded"
-								>
-									Save
-								</button>
-								<button
+								<Button type="submit" label="Save" />
+								<Button
 									type="button"
+									severity="secondary"
 									onClick={() => setIsEditingName(false)}
-									className="bg-gray-500 text-white px-4 py-2 rounded"
-								>
-									Cancel
-								</button>
+									label="Cancel"
+								/>
 							</div>
 						</form>
 					) : (
@@ -143,12 +136,10 @@ const ProfilePage = () => {
 					<div className="flex flex-wrap justify-between items-center">
 						<h2 className="text-2xl font-semibold">Email</h2>
 						{!isEditingEmail && (
-							<button
+							<Button
 								onClick={() => setIsEditingEmail(true)}
-								className="bg-blue-500 text-white px-4 py-2 rounded"
-							>
-								Edit
-							</button>
+								label="Edit"
+							/>
 						)}
 					</div>
 					{isEditingEmail ? (
@@ -187,19 +178,13 @@ const ProfilePage = () => {
 								/>
 							</div>
 							<div className="flex gap-4">
-								<button
-									type="submit"
-									className="bg-blue-500 text-white px-4 py-2 rounded"
-								>
-									Save
-								</button>
-								<button
+								<Button type="submit" label="Save" />
+								<Button
 									type="button"
+									severity="secondary"
 									onClick={() => setIsEditingEmail(false)}
-									className="bg-gray-500 text-white px-4 py-2 rounded"
-								>
-									Cancel
-								</button>
+									label="Cancel"
+								/>
 							</div>
 						</form>
 					) : (
@@ -211,12 +196,10 @@ const ProfilePage = () => {
 					<div className="flex flex-wrap justify-between items-center">
 						<h2 className="text-2xl font-semibold">Password</h2>
 						{!isEditingPassword && (
-							<button
+							<Button
 								onClick={() => setIsEditingPassword(true)}
-								className="bg-blue-500 text-white px-4 py-2 rounded"
-							>
-								Change Password
-							</button>
+								label="Change Password"
+							/>
 						)}
 					</div>
 					{isEditingPassword ? (
@@ -255,19 +238,17 @@ const ProfilePage = () => {
 								/>
 							</div>
 							<div className="flex gap-4">
-								<button
+								<Button
 									type="submit"
-									className="bg-blue-500 text-white px-4 py-2 rounded"
-								>
-									Save
-								</button>
-								<button
+									label="Save"
+									severity="primary"
+								/>
+								<Button
 									type="button"
 									onClick={() => setIsEditingPassword(false)}
-									className="bg-gray-500 text-white px-4 py-2 rounded"
-								>
-									Cancel
-								</button>
+									label="Cancel"
+									severity="secondary"
+								/>
 							</div>
 						</form>
 					) : null}
@@ -278,12 +259,11 @@ const ProfilePage = () => {
 						<h2 className="text-2xl font-semibold">
 							Delete Account
 						</h2>
-						<button
+						<Button
 							onClick={handleDelete}
-							className="bg-red-500 text-white px-4 py-2 rounded max-w-xs"
-						>
-							Delete Account
-						</button>
+							label="Delete Account"
+							severity="danger"
+						/>
 					</div>
 				</div>
 			</div>
